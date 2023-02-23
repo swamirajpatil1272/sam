@@ -1,25 +1,19 @@
-name: repo sp sync
-
 on:
-  schedule: 
-  - cron: "*/1 * * * *" # every 15 minutes. set to whatever interval you like
+  schedule:
+  - cron:  "*/15 * * * *"
+  workflow_dispatch:
 
 jobs:
   repo-sync:
-    name: Repo Sync
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - uses: repo-sync/github-sync@v2
-      name: Sync repo to branch
+    - uses: actions/checkout@v2
       with:
-        source_repo: https://github.com/swamirajpatil1272/sam2.git
-        source_branch: main
-        destination_branch: main
-        github_token: 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
-    - uses: repo-sync/pull-request@v2
-      name: Create pull request
+        persist-credentials: false
+    - name: repo-sync
+      uses: repo-sync/github-sync@v2
       with:
-        source_branch: main
-        destination_branch: main
+        source_repo: "swamirajpatil1272/sam2"
+        source_branch: "main"
+        destination_branch: "new"
         github_token: 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
