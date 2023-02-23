@@ -11,7 +11,7 @@ jobs:
       with:
         persist-credentials: false
     - name: repo-sync
-      uses: repo-sync/github-sync@v3
+      uses: repo-sync/github-sync@v2
       with:
         source_repo: "https://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@github.com/swamirajpatil1272/sam2.git"
         source_branch: "main"
