@@ -15,5 +15,6 @@ jobs:
       with:
         source_repo: "https://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@github.com/swamirajpatil1272/sam2.git"
         source_branch: "main"
+        destination_repo: "https://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@github.com/swamirajpatil1272/sam.git"
         destination_branch: "new"
         github_token: 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
